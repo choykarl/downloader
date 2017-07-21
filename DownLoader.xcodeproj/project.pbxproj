@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EBDB809E69E7F8B7588B08F /* Pods_DownLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00A056DF41252BA38A03BCD /* Pods_DownLoader.framework */; };
 		CB5028991F210E260099747E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5028981F210E260099747E /* AppDelegate.swift */; };
 		CB50289B1F210E260099747E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50289A1F210E260099747E /* ViewController.swift */; };
 		CB50289E1F210E260099747E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB50289C1F210E260099747E /* Main.storyboard */; };
 		CB5028A01F210E260099747E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB50289F1F210E260099747E /* Assets.xcassets */; };
 		CB5028A31F210E260099747E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5028A11F210E260099747E /* LaunchScreen.storyboard */; };
+		CB5028AB1F210E380099747E /* DownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5028AA1F210E380099747E /* DownLoader.swift */; };
+		CB5028AD1F210E4A0099747E /* FileMangerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5028AC1F210E4A0099747E /* FileMangerTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23FFA3C1672104774C596591 /* Pods-DownLoader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownLoader.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownLoader/Pods-DownLoader.release.xcconfig"; sourceTree = "<group>"; };
+		B00A056DF41252BA38A03BCD /* Pods_DownLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE97EE00C128DCCB14FECE3C /* Pods-DownLoader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownLoader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownLoader/Pods-DownLoader.debug.xcconfig"; sourceTree = "<group>"; };
 		CB5028951F210E260099747E /* DownLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5028981F210E260099747E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB50289A1F210E260099747E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		CB50289F1F210E260099747E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB5028A21F210E260099747E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB5028A41F210E260099747E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5028AA1F210E380099747E /* DownLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoader.swift; sourceTree = "<group>"; };
+		CB5028AC1F210E4A0099747E /* FileMangerTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMangerTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBDB809E69E7F8B7588B08F /* Pods_DownLoader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8ACD5DE30E849AD75BA9D75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE97EE00C128DCCB14FECE3C /* Pods-DownLoader.debug.xcconfig */,
+				23FFA3C1672104774C596591 /* Pods-DownLoader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CB50288C1F210E260099747E = {
 			isa = PBXGroup;
 			children = (
 				CB5028971F210E260099747E /* DownLoader */,
 				CB5028961F210E260099747E /* Products */,
+				C8ACD5DE30E849AD75BA9D75 /* Pods */,
+				E9513EB2B4FE144768BD4A89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +76,22 @@
 			children = (
 				CB5028981F210E260099747E /* AppDelegate.swift */,
 				CB50289A1F210E260099747E /* ViewController.swift */,
+				CB5028AA1F210E380099747E /* DownLoader.swift */,
+				CB5028AC1F210E4A0099747E /* FileMangerTool.swift */,
 				CB50289C1F210E260099747E /* Main.storyboard */,
 				CB50289F1F210E260099747E /* Assets.xcassets */,
 				CB5028A11F210E260099747E /* LaunchScreen.storyboard */,
 				CB5028A41F210E260099747E /* Info.plist */,
 			);
 			path = DownLoader;
+			sourceTree = "<group>";
+		};
+		E9513EB2B4FE144768BD4A89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B00A056DF41252BA38A03BCD /* Pods_DownLoader.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB5028A71F210E260099747E /* Build configuration list for PBXNativeTarget "DownLoader" */;
 			buildPhases = (
+				F080E4BDB06B6DFB7F03F8E6 /* [CP] Check Pods Manifest.lock */,
 				CB5028911F210E260099747E /* Sources */,
 				CB5028921F210E260099747E /* Frameworks */,
 				CB5028931F210E260099747E /* Resources */,
+				7E8608EAA8AF0214B35BAC80 /* [CP] Embed Pods Frameworks */,
+				AAA0DE1C573D5321824B8D81 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +164,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E8608EAA8AF0214B35BAC80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DownLoader/Pods-DownLoader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DownLoader/Pods-DownLoader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA0DE1C573D5321824B8D81 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DownLoader/Pods-DownLoader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F080E4BDB06B6DFB7F03F8E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DownLoader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB5028911F210E260099747E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5028AB1F210E380099747E /* DownLoader.swift in Sources */,
 				CB50289B1F210E260099747E /* ViewController.swift in Sources */,
 				CB5028991F210E260099747E /* AppDelegate.swift in Sources */,
+				CB5028AD1F210E4A0099747E /* FileMangerTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +349,7 @@
 		};
 		CB5028A81F210E260099747E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE97EE00C128DCCB14FECE3C /* Pods-DownLoader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DownLoader/Info.plist;
@@ -272,6 +362,7 @@
 		};
 		CB5028A91F210E260099747E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23FFA3C1672104774C596591 /* Pods-DownLoader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DownLoader/Info.plist;
