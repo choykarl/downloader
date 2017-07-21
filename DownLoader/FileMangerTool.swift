@@ -17,10 +17,17 @@ class FileManagerTool: NSObject {
   class func fileSize(_ filePath: String) -> UInt64 {
     guard fileExists(filePath) else { return 0 }
     
-    if let att = try? FileManager.default.attributesOfItem(atPath: filePath) as NSDictionary {
-      // FileAttributeKey.size
-      return att.fileSize()
+    // 下面两种方式都能获取大小
+    // 1:
+    if let att = try? FileManager.default.attributesOfItem(atPath: filePath) {
+      if let size = att[FileAttributeKey.size] as? UInt64 {
+        return size
+      }
     }
+    // 2:
+//    if let att = try? FileManager.default.attributesOfItem(atPath: filePath) as NSDictionary {
+//      return att.fileSize()
+//    }
     return 0
   }
   
