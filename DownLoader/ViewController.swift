@@ -12,14 +12,13 @@ class ViewController: UIViewController {
   @IBOutlet weak var beginButton: UIButton!
   var downloader: DownLoader?
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
   func createDownloader() {
     downloader = DownLoader()
-    if let url = URL(string: "http://120.25.226.186:32812/resources/videos/minion_04.mp4") {
-      downloader?.download(url: url) { [weak self] (result) in
+    if let url = URL(string: "http://120.25.226.186:32812/resources/videos/minion_01.mp4") {
+      downloader?.download(url: url, progressHandle: { (progress) in
+        print(progress)
+      }, completionHandle: { [weak self] (result) in
+        print(Thread.current)
         guard let weakSelf = self else { return }
         switch result {
         case .success(let path):
@@ -28,7 +27,8 @@ class ViewController: UIViewController {
           print(error)
         }
         weakSelf.beginButton.setTitle("开始", for: .normal)
-      }
+        weakSelf.downloader = nil
+      })
     }
     beginButton.setTitle("暂停", for: .normal)
   }

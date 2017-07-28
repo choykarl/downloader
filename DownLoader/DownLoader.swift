@@ -23,6 +23,7 @@ enum Result {
   case error(Error)
 }
 
+
 class DownLoader: NSObject {
   
   fileprivate(set) var status = DownloadStatus.none
@@ -34,17 +35,24 @@ class DownLoader: NSObject {
   fileprivate var tempSize: UInt64 = 0
   fileprivate var totalSize: UInt64 = 0
   fileprivate var completionHandle: ((Result) -> ())?
+  fileprivate var progressHandle: ((CGFloat) -> ())?
+  fileprivate var progressSize: UInt64 = 0
 
-  func download(url: URL, fileName saveFileName: String = "", completionHandle: ((Result) -> ())? = nil) {
-    
+  func download(url: URL, fileName saveFileName: String = "", progressHandle: ((CGFloat) -> ())? = nil, completionHandle: ((Result) -> ())? = nil) {
+    if task?.currentRequest?.url == url {
+      print("重复任务")
+      return
+    }
+    self.progressHandle = progressHandle
     self.completionHandle = completionHandle
-    
     let fileName = saveFileName == "" ? url.lastPathComponent : saveFileName
     downLoadedPath = cachePath + fileName
     downLoadingPath = tempPath + fileName
     
     if FileManagerTool.fileExists(downLoadedPath) {
-      completionHandle?(Result.success(path: downLoadedPath))
+      DispatchQueue.global().async {
+        completionHandle?(Result.success(path: self.downLoadedPath))
+      }
       return
     }
     
@@ -66,13 +74,17 @@ class DownLoader: NSObject {
   }
   
   func resume() {
-    task?.resume()
-    status = .resume
+    if status != .resume {
+      task?.resume()
+      status = .resume
+    }
   }
   
   func suspend() {
-    task?.suspend()
-    status = .suspended
+    if status != .suspended {
+      task?.suspend()
+      status = .suspended
+    }
   }
   
   func cancel() {
@@ -113,13 +125,13 @@ extension DownLoader: URLSessionDataDelegate {
         totalSize = length
       }
     }
-    
+
     // 临时文件比要下载的还大,就删除,重新下载
     if tempSize > totalSize {
       FileManagerTool.removeFile(downLoadingPath)
       completionHandler(.cancel)
       if let url = response.url {
-        download(url: url)
+        download(url: url, progressHandle: progressHandle, completionHandle: completionHandle)
       }
       return
     }
@@ -134,11 +146,15 @@ extension DownLoader: URLSessionDataDelegate {
     outputStream = OutputStream(toFileAtPath: downLoadingPath, append: true)
     outputStream?.open()
     completionHandler(.allow)
+    progressSize = tempSize
   }
   
   
   func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-    _ = data.withUnsafeBytes({self.outputStream?.write($0, maxLength: data.count)})
+    let dataSize = data.count
+    _ = data.withUnsafeBytes({self.outputStream?.write($0, maxLength: dataSize)})
+    progressSize += UInt64(dataSize)
+    progressHandle?(CGFloat(progressSize) / CGFloat(totalSize))
   }
   
   func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

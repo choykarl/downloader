@@ -15,6 +15,8 @@
 		CB5028A31F210E260099747E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5028A11F210E260099747E /* LaunchScreen.storyboard */; };
 		CB5028AB1F210E380099747E /* DownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5028AA1F210E380099747E /* DownLoader.swift */; };
 		CB5028AD1F210E4A0099747E /* FileMangerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5028AC1F210E4A0099747E /* FileMangerTool.swift */; };
+		CBB9FBC71F2AE95600BB084F /* DownloaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FBC61F2AE95600BB084F /* DownloaderManager.swift */; };
+		CBB9FBC91F2B243E00BB084F /* MoreTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FBC81F2B243E00BB084F /* MoreTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CB5028A41F210E260099747E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5028AA1F210E380099747E /* DownLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoader.swift; sourceTree = "<group>"; };
 		CB5028AC1F210E4A0099747E /* FileMangerTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMangerTool.swift; sourceTree = "<group>"; };
+		CBB9FBC61F2AE95600BB084F /* DownloaderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloaderManager.swift; sourceTree = "<group>"; };
+		CBB9FBC81F2B243E00BB084F /* MoreTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				CB5028981F210E260099747E /* AppDelegate.swift */,
 				CB50289A1F210E260099747E /* ViewController.swift */,
 				CB5028AA1F210E380099747E /* DownLoader.swift */,
+				CBB9FBC61F2AE95600BB084F /* DownloaderManager.swift */,
+				CBB9FBC81F2B243E00BB084F /* MoreTaskViewController.swift */,
 				CB5028AC1F210E4A0099747E /* FileMangerTool.swift */,
 				CB50289C1F210E260099747E /* Main.storyboard */,
 				CB50289F1F210E260099747E /* Assets.xcassets */,
@@ -225,7 +231,9 @@
 			files = (
 				CB5028AB1F210E380099747E /* DownLoader.swift in Sources */,
 				CB50289B1F210E260099747E /* ViewController.swift in Sources */,
+				CBB9FBC71F2AE95600BB084F /* DownloaderManager.swift in Sources */,
 				CB5028991F210E260099747E /* AppDelegate.swift in Sources */,
+				CBB9FBC91F2B243E00BB084F /* MoreTaskViewController.swift in Sources */,
 				CB5028AD1F210E4A0099747E /* FileMangerTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +400,7 @@
 				CB5028A91F210E260099747E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
